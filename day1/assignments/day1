@@ -1,0 +1,101 @@
+### Exercise 1:
+
+- Create a file called z that returns "Z", followed by a new line, whenever the command
+cat is used on it.
+
+example:
+
+```
+$ cat > z.txt  #this instruction will create a file called z and then give the order to write whatever we want to write
+Z
+
+
+#to save and exit , all we have to do is to press (CTRL+D).
+```
+
+### Exercise 2:
+
+- Create a file called foo in your current directory.
+- Figure out a way for the output to look like this (except for the “total 1” line):
+- Don’t worry about what you’ve got instead of "XX".
+
+```
+$ pwd
+$ touch foo
+$ chmod 455 foo
+$ ls -l
+total 1
+-r--r-xr-x 1 XX XX 40 Jun 1 23:42 foo
+%>
+```
+
+### Exercise 3:
+
+- Create the following files and directories. Do what’s necessary so that when you
+use the ls -l command in your directory, the output will looks like this :
+- Don’t worry about what you’ve got instead of "XX".
+
+```
+$ mkdir test0 test2   # cette commande permet de creer les deux dossiers test0 et test1
+$ touch  test1  test3  test4  test5
+$ chmod 715 test0
+$ chmod 714 test1
+$ chmod 504 test2
+$ chmod 404 test3
+$ chmod 641 test4
+$ chmod 404 test5
+$ ln -s test0 test6
+%> ls -l
+#the output will be something like this
+total XX
+drwx--xr-x 2 XX XX XX Jun 1 20:47 test0
+-rwx--xr-- 1 XX XX 4 Jun 1 21:46 test1
+dr-x---r-- 2 XX XX XX Jun 1 22:45 test2
+-r-----r-- 2 XX XX 1 Jun 1 23:44 test3
+-rw-r----x 1 XX XX 2 Jun 1 23:43 test4
+-r-----r-- 2 XX XX 1 Jun 1 23:44 test5
+lrwxr-xr-x 1 XX XX 5 Jun 1 22:20 test6 -> test0
+%>
+```
+
+### Exercise 4:
+
+- Write a command line that will list all files and directories in your
+current directory, separated by a comma, by order of creation date. Make sure
+directories’ names are followed by a slash character
+```
+$ ls -t -p -m
+```
+
+### Exercise 5:
+
+- Write a command line that searches for all file names that end with ".sh" (without
+quotation marks) in the current directory and all its sub-directories. It should
+display only the file names without the .sh.
+
+Example of the output:
+
+```
+$ find . -type f ! -name "*.sh"| cat -e
+#the output will be something like this
+find_sh$
+file1$
+file2$
+file3$
+$>
+```
+
+ ### Exercise 5:
+ 
+ - Write a command line that counts and displays the number of regular files and
+directories in the current directory and all its sub-directories. It should include ".",
+the starting directory.
+
+Example of the output:
+
+```
+$ find . \( -type f -or -type d \) -print | wc -l
+#the output :
+42$
+$>
+```
